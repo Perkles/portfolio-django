@@ -1,3 +1,3 @@
-# Gabli
+# Gagli
 Insect Identification platform
 
