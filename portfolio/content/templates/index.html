@@ -1,82 +1,107 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
-
-<head>
-	<title>Portfolio's</title>
-</head>
-<style>
-	body{
-		background-color: black;
-		color: white;
-	}
-	.artigos{
-		background-color: grey;
-		height:80%;
-		width:80%;
-		text-align: justify;
-		padding: 15px;
-		position:absolute;
-		overflow-x: 
-	}
-	.pagination{
-		float: right;
-    	width: 150px;
-    	height: 75px;
-    	margin: 10px;
-    	border: 3px solid #73AD21; 
-		background-color: green;
-		color:white;
-		font-size: 10px;
-	}
-	.menulateral{
-				float: right;
-    	width: 150px;
-    	height: 75px;
-    	margin: 10px;
-    	border: 3px solid #73AD21; 
-		background-color: green;
-		color:white;
-		font-size: 10px;
-	}
-
-</style>
-
-<body>
-	<h1>It's Working</h1>
+<html lang="pt-br">
+	<head>
+		<title>Portfolio's</title>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{% static 'content/css/bootstrap.css' %}">
 	
-	<div class="artigos">
-		{% for item in conteudo_artigo%}
-			<a href="/artigos/{{item.id}}"><h1>{{item.titulo}}</h1></a>
-			<h1>{{item.corpo}}</h1>
-			<h1>{{item.data}}</h1>
-		{% endfor %}
-	</div>
+		<style>
+			#jurlica{
+				background-color: orange;
+			}
+			#kao{
+				background-color: green;
+				text-align: center;
+			}
+			#xablal{
+				background-color: purple;
+			}
+		</style>
+	
+	</head>
+	
+	<body>
 
-	<div class="pagination">
-    	<span class="step-links">
-    	
-        	{% if conteudo_artigo.has_previous %}
-            	<a href="?page={{ conteudo_artigo.previous_page_number }}">previous</a>
-       	 	{% endif %}
+		<div class='container.fluid'>
+			<div class='row'>
+				<div class='col-lg-12'>
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<a class="navbar-brand" href="#"> R.Perkles </a>
+						</div>
+						<button class="btn btn-default navbar-btn"> <a href="#">HOME</a></button>
+						<button class="btn btn-default navbar-btn"> <a href="#">TALES</a></button>
+						<button class="btn btn-default navbar-btn"> <a href="#">ABOUT</a></button>
+					</nav>
+				</div>
+			</div>
+ 		</div>
 
-        	<span class="current">
-            	Page {{ conteudo_artigo.number }} of {{ conteudo_artigo.paginator.num_pages }}.
-        	</span>
+ 		<div class='container'>
+ 			<div class='row'>
+ 				<div id='jurlica' class='col-lg-8'>
+					{% for item in conteudo_artigo%}
+						<a href="/artigos/{{item.id}}"><h1>{{item.titulo|upper}}</h1></a>
+						<h1>{{item.corpo}}</h1>
+						<h1>{{item.data}}</h1>
+					{% endfor %}
 
-        	{% if conteudo_artigo.has_next %}
-            	<a href="?page={{ conteudo_artigo.next_page_number }}">next</a>
-        	{% endif %}
-    	</span>
-	</div>
+					<nav aria-label="pagin">
+  						<ul class="pager">
+  							{% if conteudo_artigo.has_previous %}
+								<li><a href="?page={{ conteudo_artigo.previous_page_number }}">previous</a></li>
+							{% endif %}
+   							 
+							<!-- <span class="current"> -->
+								Page {{ conteudo_artigo.number }} of {{ conteudo_artigo.paginator.num_pages }}.
+							<!--</span>-->
 
-	<div class='menulateral'>
-		{% for item in menu%}
-			<ul>
-				<li>{{item.data}}</li>
-			</ul>
-		{% endfor %}
-	</div>
+							{% if conteudo_artigo.has_next %}
+								<li><a href="?page={{ conteudo_artigo.next_page_number }}">next</a></li>
+							{% endif %}
+  						</ul>
+					</nav>
 
-</body>
+				</div>
+				<div id='kao' class='col-lg-4'>
+					{% for item in menu%}
+						<ul>
+							<li>{{item.data}}</li>
+						</ul>
+					{% endfor %}
+				</div>
+			</div>
 
+			<div id='xablal' class="row">
+  				<div class="col-sm-6 col-md-4">
+    				<div class="thumbnail">
+     		 				<img src="{% static 'content/dagon.png' %}" alt="...">
+      					<div class="caption">
+        					<h3>Thumbnail label</h3>
+        					<p>Jurlipeiro do nordeste caboco feroz, do mato e da selva, macho da raiz</p>
+        					<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      					</div>
+    				</div>
+  				</div>
+  				<div class="col-sm-6 col-md-4">
+    				<div class="thumbnail">
+     		 				<img src="{% static 'content/dagon.png' %}" alt="...">
+      					<div class="caption">
+        					<h3>Thumbnail label</h3>
+        					<p>Jurlipeiro do nordeste caboco feroz, do mato e da selva, macho da raiz</p>
+        					<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      					</div>
+    				</div>
+  				</div>
+			</div>
+
+ 		</div><!-- div do container-->
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="{%  static 'content/js/bootstrap.min.js' %}"></script>
+	</body>	
 </html>
