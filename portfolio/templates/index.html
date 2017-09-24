@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Portfolio's</title>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{% static 'content/css/bootstrap.css' %}">
+		<link href="https://fonts.googleapis.com/css?family=Lobster|Oswald|Port+Lligat+Slab" rel="stylesheet">
+	
+		<style>
+			body{
+			font-family: 'Port Lligat Slab', serif;
+			font-size: 20px;
+			}
+			/* CSS DE FORMATAÇÃO DO ARTIGO */
+			#artigo{
+			background-color: orange;
+			padding: 15px;
+			/*font-family: 'Source Serif Pro', serif; */
+			}
+			#artigo img{
+			max-width: 100%;
+			height: auto;
+			margin:auto;
+			}
+
+			#corpo_artigo{
+
+			}
+			#data{
+			text-align: right;
+			}
+			#nome{
+			text-align: left;
+			}
+			#tag{
+			text-align: left;
+			}
+			#titulo{
+			font-size: 30px;
+			font-family: 'Oswald', sans-serif;
+			text-decoration: none;
+			}
+			#autor{
+			font-family: 'Oswald', sans-serif;
+			}
+			/* FIM DA FORMATAÇÃO DO CSS DO ARTIGO*/
+
+			#menu_lateral{
+			background-color: green;
+			list-style-type:none;
+			padding: 15px;
+			}
+
+			#trabalho_destacado{
+			background-color: purple;
+			padding: 15px;
+
+			}
+			#footer{
+			background-color: red;
+			text-align: center;
+			margin:10px;
+			}
+			#social{
+			background-color: grey;
+			text-align: center;
+			}
+			.navbar-brand{
+			font-family: 'Lobster', cursive;
+			}
+		</style>
+	
+	</head>
+	
+	<body>
+		<div class='container.fluid'>
+			<div class='row'>
+				<div class='col-lg-12'>
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<a class="navbar-brand" href="#"> R.Perkles </a>
+						</div>
+						<button class="btn btn-default navbar-btn"> <a href="#">Blog</a></button>
+						<button class="btn btn-default navbar-btn"> <a href="#">Autor</a></button>
+						<button class="btn btn-default navbar-btn"> <a href="#">Contrate</a></button>
+						<button class="btn btn-default navbar-btn"> <a href="#">Portfolio</a></button>
+					</nav>
+				</div>
+			</div>
+ 		</div><!-- BARRA DE NAVEGAÇÃO -->
+
+ 		<div class='container'>
+ 			<div class='row'>
+				<div id='artigo' class='col-lg-8'>
+					{% for item in conteudo_artigo%}
+					
+					{% if item.photo %}
+					<img src="{{item.photo}}" class="img-responsive" alt="..."> <!-- HARDCODED- TEM QUE CONFIGURAR UM ROOT MANEIRO -->
+					{% endif %}
+					
+						<a id='titulo' href="/artigos/{{item.id}}"><h1>{{item.titulo}}</h1></a>
+						<h5 id ='autor'>{{item.autor}}</h5>
+						<h5 id ='tag'>{{item.tag}}</h5>
+
+						{% if item.corpo|length > 1000 %} <!-- Testa pra saber se o tamanho do texto é grande -->
+							<p id = 'corpo_artigo'>{{item.corpo|truncatewords:200|safe}}</p> <!-- se sim add botao 'continue lendo' / trucatewords filtra 200 palavras / safe diz que o texto ecapa as tags html -->
+							<button class="btn btn-default navbar-btn"> <a href="/artigos/{{item.id}}">Continue lendo</a></button>
+						{% else %}
+							<p>{{item.corpo}}</p>
+						{% endif%}
+							<h5 id ='data'>{{item.data}}</h5>
+
+					{% endfor %}
+
+					<nav aria-label="pagin">
+						<ul class="pager">
+							{% if conteudo_artigo.has_previous %}
+								<li><a href="?page={{ conteudo_artigo.previous_page_number }}">previous</a></li>
+							{% endif %}
+							 
+							<!-- <span class="current"> -->
+								Page {{ conteudo_artigo.number }} of {{ conteudo_artigo.paginator.num_pages }}.
+							<!--</span>-->
+
+							{% if conteudo_artigo.has_next %}
+								<li><a href="?page={{ conteudo_artigo.next_page_number }}">next</a></li>
+							{% endif %}
+						</ul>
+					</nav>
+				</div>
+
+				<div id='menu_lateral' class='col-lg-4'>
+					<h5>Ultimos postes</h5>
+					{% for item in menu%}
+						<ul>
+							<li>{{item.titulo}} - {{item.data}}</li>
+						</ul>
+					{% endfor %}
+				</div>
+
+				<div id='social' class='col-lg-4'>
+					<h1> Social media </h1>
+				</div>
+			</div> <!--FIM DA LINHA UM --> 
+
+
+			<div id='trabalho_destacado' class="row">
+				{% for item in trabalhos%} <!-- cria um loop pelos trabalhos continos no portfolio-->
+					{% if item.id != 4 %} <!--seleciona os primeiros 3-->
+	  					<div class="col-sm-6 col-md-4">
+	    				<div class="thumbnail">
+								{% if item.imagem %}
+	    						<img src="{{item.imagem}}" class="img-rounded" alt="...">
+	     		 				<!--<img src="{% static 'content/dagon.png' %}" alt="...">-->
+	     		 				{% endif %}
+	      					<div class="caption">
+	        					<h3>{{item.nome}}</h3>
+	        					<p>{{item.descricao}}</p>
+	        					<p>{{item.fim}}</p>
+	        					<p><a href="/portfolio/" class="btn btn-primary" role="button">Detalhes</a></p>
+	      					</div>
+	    				</div>
+  					</div>
+  					{% endif %}
+  				{% endfor %}	  				
+			</div><!-- FIM DA LINHA DOIS-->
+
+
+			<div id = 'footer' class='row'>
+				<div class='col-lg-12 col-md-12 col-sm-12'>
+					<h4>FEITO POR MIM MESMO - 2017</h4>
+				</div>
+			</div> <!-- FIM DA LINHA TRES -->
+
+ 		</div><!-- FIM DO CONTAINER PRINCIPAL-->
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="{%  static 'content/js/bootstrap.min.js' %}"></script>
+	</body>	
+</html>

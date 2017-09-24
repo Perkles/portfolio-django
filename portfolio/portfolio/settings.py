@@ -37,8 +37,29 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'content'
+    'content',
+    'tinymce'
 ]
+#TINYMCE CONFIGURATION
+TINYMCE_SPELLCHECKER = False
+TINYMCE_COMPRESSOR = False
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "paste",
+    'paste_text_sticky': True,
+    'paste_text_sticky_default': True,
+    'theme': "advanced",
+    'theme_advanced_buttons1': "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,|,link,unlink,anchor,|,table,removeformat,code",
+    'theme_advanced_buttons2': "",
+    'theme_advanced_buttons3': "",
+    'theme_advanced_buttons4': "",
+    'theme_advanced_toolbar_location': "top",
+    'theme_advanced_toolbar_align': "left",
+    'theme_advanced_statusbar_location': "bottom",
+    'theme_advanced_resizing': True,
+    'height': "480",
+    'selector': 'textarea',
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,7 +76,7 @@ ROOT_URLCONF = 'portfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -110,12 +131,19 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False # COlocando False o django deixa de configurar automaticamente a data 
 
 USE_TZ = True
+
+DATE_FORMAT = 'd/m/Y' #estipula o formato da data
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    #'/var/www/static/',
+] 
