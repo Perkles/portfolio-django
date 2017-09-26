@@ -12,6 +12,7 @@
 			body{
 			font-family: 'Port Lligat Slab', serif;
 			font-size: 20px;
+			
 			}
 			/* CSS DE FORMATAÇÃO DO ARTIGO */
 			#artigo{
@@ -70,30 +71,62 @@
 			.navbar-brand{
 			font-family: 'Lobster', cursive;
 			}
+
+			/* ELEMENTO ADICIONADO POR TERCEIROS https://stackoverflow.com/questions/19733447/bootstrap-navbar-with-left-center-and-right-aligned-items */
+			/* Menu Hamburguer */
+			.navbar-brand{
+		    position: absolute;
+		    width: 100%;
+		    left: 0;
+		    text-align: center;
+		    margin:0 auto;
+			}
+
+			.navbar-toggle {
+    		z-index:3;
+			}
+
+
 		</style>
 	
 	</head>
 	
 	<body>
-		<div class='container.fluid'>
-			<div class='row'>
-				<div class='col-lg-12'>
-					<nav class="navbar navbar-default">
-						<div class="navbar-header">
-							<a class="navbar-brand" href="#"> R.Perkles </a>
-						</div>
-						<button class="btn btn-default navbar-btn"> <a href="#">Blog</a></button>
-						<button class="btn btn-default navbar-btn"> <a href="#">Autor</a></button>
-						<button class="btn btn-default navbar-btn"> <a href="#">Contrate</a></button>
-						<button class="btn btn-default navbar-btn"> <a href="#">Portfolio</a></button>
-					</nav>
-				</div>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>    
+			<a class="navbar-brand" href="#">Brand</a>
 			</div>
- 		</div><!-- BARRA DE NAVEGAÇÃO -->
+
+			
+
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-left">
+					<li><a href="#">Inicio</a></li>
+					<li><a href="#aout">Portfolio</a></li>
+					<li><a href="#aout">Sobre Mim</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#about">Right</a></li>
+					<li><a href="#contact">Right</a></li>
+				</ul>
+			</div>
+		</nav><!-- BARRA DE NAVEGAÇÃO --> 
+
+ 		<div class='container.fluid'>
+ 			<div class='row'>
+ 				<!--<img src="{% static 'main.png' %}" alt="..."> -->
+ 			</div>
+ 		</div>
 
  		<div class='container'>
  			<div class='row'>
-				<div id='artigo' class='col-lg-8'>
+				<div id='artigo' class='col-lg-12'>
 					{% for item in conteudo_artigo%}
 					
 					{% if item.photo %}
@@ -131,25 +164,14 @@
 					</nav>
 				</div>
 
-				<div id='menu_lateral' class='col-lg-4'>
-					<h5>Ultimos postes</h5>
-					{% for item in menu%}
-						<ul>
-							<li>{{item.titulo}} - {{item.data}}</li>
-						</ul>
-					{% endfor %}
-				</div>
-
-				<div id='social' class='col-lg-4'>
-					<h1> Social media </h1>
-				</div>
+				
 			</div> <!--FIM DA LINHA UM --> 
 
 
 			<div id='trabalho_destacado' class="row">
 				{% for item in trabalhos%} <!-- cria um loop pelos trabalhos continos no portfolio-->
 					{% if item.id != 4 %} <!--seleciona os primeiros 3-->
-	  					<div class="col-sm-6 col-md-4">
+	  					<div class="col-sm-3 col-md-3">
 	    				<div class="thumbnail">
 								{% if item.imagem %}
 	    						<img src="{{item.imagem}}" class="img-rounded" alt="...">
@@ -164,13 +186,22 @@
 	    				</div>
   					</div>
   					{% endif %}
-  				{% endfor %}	  				
+  				{% endfor %}
+
+  				<div id='menu_lateral' class='col-lg-3'>
+					<h5>Ultimos postes</h5>
+					{% for item in menu%}
+						<ul>
+							<li>{{item.titulo}} - {{item.data}}</li>
+						</ul>
+					{% endfor %}
+				</div>	  				
 			</div><!-- FIM DA LINHA DOIS-->
 
 
 			<div id = 'footer' class='row'>
 				<div class='col-lg-12 col-md-12 col-sm-12'>
-					<h4>FEITO POR MIM MESMO - 2017</h4>
+					<h4>Design and Backend - Otávio R. Perkles &copy 2017</h4>
 				</div>
 			</div> <!-- FIM DA LINHA TRES -->
 
