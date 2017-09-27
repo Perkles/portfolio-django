@@ -4,160 +4,21 @@
 	<head>
 		<title>Portfolio's</title>
 		<meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="{% static 'content/css/bootstrap.css' %}">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+		<link rel="stylesheet" href="{% static 'css/meucss.css' %}">
 		<link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Antic+Slab" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	
 		<style>
-			body{
-				background-color: #5b6670;
-				font-family: 'Antic Slab', serif;
-				font-size: 20px;
-			}
-			/* CSS DE FORMATAÇÃO DO ARTIGO */
-			#artigo{
-
-				background-color: #dff2f7;
-				padding: 15px;
-				/*font-family: 'Source Serif Pro', serif; */
-			}
-			#artigo img{
-				max-width: 100%;
-				height: auto;
-				margin:auto;
-			}
-			#data{
-				text-align: right;
-			}
-			#tag{
-				text-align: left;
-				
-			}
-			#autor{
-				
-			}
-
-			#titulo{
-				font-family: 'Amatic SC', cursive;
-				margin:10px;
-				font-size: 50px;
-				
-				text-decoration: none;
-			}
-		
-			
-			/* FIM DA FORMATAÇÃO DO CSS DO ARTIGO*/
-
-			#menu_lateral{
-				background-color: green;
-				list-style-type:none;
-				padding: 15px;
-			}
-
-			
-
-			#trabalho_destacado{
-				background-color: #dff2f7;
-				padding: 15px;
-			}
-			.thumbnail h4{
-				font-size: 45px;
-				text-align: center;
-				font-family: 'Amatic SC', cursive;
-			}
-			.thumbnail p{
-				text-align:justify;
-			}
-
-
-			.pre_footer{
-				color:#faffff;
-				background-color: #34383c;
-				text-align: center;
-				font-family: 'Amatic SC', cursive;
-			}
-			.footer{
-				font-size: 12px;
-				font-family: 'Antic Slab', serif;
-				color:#faffff;
-				background-color: #1e2022;
-				text-align: center;
-			
-			}
-			
-			.navbar text{
-				color:green;
-			}
-			.navbar{
-				margin-bottom: 0;
-				background-color: #34383c;
-				border-color: #34383c;
-			}
-			.navbar-brand{
-				
-			}
-
-			.contato{
-				background-color: blue;
-			}
-
-			/* ELEMENTO ADICIONADO POR TERCEIROS https://stackoverflow.com/questions/19733447/bootstrap-navbar-with-left-center-and-right-aligned-items */
-			/* Menu Hamburguer */
-			.navbar-brand{
-			    position: absolute;
-			    width: 100%;
-			    left: 0;
-			    text-align: center;
-			    margin:0 auto;
-
-			}
-
-			.navbar-toggle {
-    			z-index:3;
-			}
-
-			.base{
-				padding-bottom: 50px;
-			}
-			
-			.jumbotron{
-				background-color: #dff2f7;
-			}
-			.jumbotron_container{
-				text-align: center;	
-				font-family: 'Amatic SC', cursive;
-			}
-		
-
-			.nav.navbar-nav.navbar-left li a{
-				font-size: 25px;
-				font-family: 'Amatic SC', cursive;
-				color:#faffff;
-			}
-			.nav.navbar-nav.navbar-left li a:hover{
-				font-family: 'Amatic SC', cursive;
-				color:#ce6a5f;
-			}
-
-			.nav.navbar-nav.navbar-right li a{
-				
-				color:#faffff;
-			}
-			.nav.navbar-nav.navbar-right li a:hover{
-				
-				color:#ce6a5f;
-			}
-			
-
-
 
 		</style>
 	
 	</head>
 	
 	<body>
-		<nav class="navbar navbar-default" role="navigation">
+		
+		<nav class="navbar navbar-default" role="navigation"> <!-- BARRA DE NAVEGAÇÃO -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="icon-bar"></span>
@@ -175,93 +36,36 @@
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#" class="icon-github"></a></li>
-					<li><a href="#" class="icon-twitter"></a></li>
-					<li><a href="#" class="icon-linkedin"></a></li>
-					<li><a href="#" class="icon-stackexchange"></a></li>
+					<li><a href="https://github.com/Perkles" target="_blank" class="icon-github"></a></li>
+					<li><a href="https://twitter.com/ZurykMalkin" target="_blank" class="icon-twitter"></a></li>
+					<li><a href="https://www.linkedin.com/in/ot%C3%A1vio-reis-perkles-695913141/" target="_blank" class="icon-linkedin"></a></li>
+					<li><a href="https://pt.stackoverflow.com/users/92077/ot%C3%A1vio-reis-perkles?tab=profile" target="_blank" class="icon-stackexchange"></a></li>
 				</ul>
 			</div>
 		</nav><!-- BARRA DE NAVEGAÇÃO --> 
+
 
 	
 		<div class="jumbotron">
 			<div class='jumbotron_container container'>
 	  			<h1>Olá! Eu sou o Otávio</h1>
-	  			<p>Programador free lance a proucura de projetos emocionates</p>
-	  			
+	  			<h2>Programador free lance a proucura de projetos emocionates</h2>
 	  			<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
   			</div>	
 		</div>
-	
 
- 		<div class='container.fluid'>
- 			<div class='row'>
- 				<!--<img src="{% static 'main.png' %}" alt="..."> -->
- 			</div>
- 		</div>
+		<div class='base container'>
+			{% block artigo%}
+ 			
+			{% endblock %}
 
- 		<div class='base container'>
- 			<div class='row'>
-				<div id='artigo' class='col-lg-12 col-md-12 col-sm-12'>
-					{% for item in conteudo_artigo%}
-						{% if item.photo %}
-							<img src="{{item.photo}}" class="img-responsive" alt="..."> <!-- HARDCODED- TEM QUE CONFIGURAR UM ROOT MANEIRO -->
-						{% endif %}
-						
-							<a id='titulo' href="/artigos/{{item.id}}">{{item.titulo}}</a>
-							<h5 id ='autor'>{{item.autor}}</h5>
-							<h5 id ='tag'>{{item.tag}}</h5>
+			{% block portfolio %}
+		
+			{% endblock %}
 
-							{% if item.corpo|length > 1000 %} <!-- Testa pra saber se o tamanho do texto é grande -->
-								<p id = 'corpo_artigo'>{{item.corpo|truncatewords:200|safe}} </p> <!-- se sim add botao 'continue lendo' / trucatewords filtra 200 palavras / safe diz que o texto ecapa as tags html -->
-								<button class="btn btn-default navbar-btn"> <a href="/artigos/{{item.id}}">Continue Lendo</a></button>
-							{% else %}
-								<p>{{item.corpo|safe}} </p>
-							{% endif%}
-								<h5 id ='data'>{{item.data}}</h5>
-					{% endfor %}
+			{% block artigo_full %}
+			{% endblock %}
 
-					<nav aria-label="pagin">
-						<ul class="pager">
-							{% if conteudo_artigo.has_previous %}
-								<li><a href="?page={{ conteudo_artigo.previous_page_number }}">previous</a></li>
-							{% endif %}
-							 
-							<!-- <span class="current"> -->
-								Page {{ conteudo_artigo.number }} of {{ conteudo_artigo.paginator.num_pages }}.
-							<!--</span>-->
-
-							{% if conteudo_artigo.has_next %}
-								<li><a href="?page={{ conteudo_artigo.next_page_number }}">next</a></li>
-							{% endif %}
-						</ul>
-					</nav>
-				</div>
-
-				
-			</div> <!--FIM DA LINHA UM --> 
-
-
-			<div id='trabalho_destacado' class="row">
-				{% for item in trabalhos%} <!-- cria um loop pelos trabalhos continos no portfolio-->
-					{% if item.id != 4 %} <!--seleciona os primeiros 3-->
-	  					<div class=" col-lg-4 col-md-4 col-sm-4">
-	    				<div class="thumbnail">
-								{% if item.imagem %}
-	    						<img src="{{item.imagem}}" class="img-rounded" alt="...">
-	     		 				<!--<img src="{% static 'content/dagon.png' %}" alt="...">-->
-	     		 				{% endif %}
-	      					<div class="caption">
-	        					<h4>{{item.nome}}</h4>
-	        					<p>{{item.descricao}}</p>
-	        					<p>{{item.fim}}</p>
-	        					<p><a href="/portfolio/" class="btn btn-primary" role="button">Detalhes</a></p>
-	      					</div>
-	    				</div>
-  					</div>
-  					{% endif %}
-  				{% endfor %}	  				
-			</div><!-- FIM DA LINHA DOIS-->
 		</div><!-- FIM DO CONTAINER PRINCIPAL-->
 			
 			
@@ -276,26 +80,24 @@
 							</ul>
 						{% endfor %}
 					</div>
-					<div class='col-lg-6 col-md-6 col-sm-6'>
-						<h2>CONTATOS</h2>
-
-						<i class="icon-location-arrow"></i> Itaocara - RJ - Brasil
-						<br>
-						<i class="icon-envelope"></i> otaviocha@gmail.com
-						<br>
-						<i class="icon-rss"></i> Assine
-						<br>
-						<i class="icon-suitcase"></i> Contrate
+					<div class='contato'>
+						<div class='col-lg-6 col-md-6 col-sm-6'>
+							<h2>CONTATOS</h2>
+							<i class="icon-envelope"></i> otaviocha@gmail.com
+							<br>
+							<i class="icon-location-arrow"></i> Itaocara - RJ - Brasil
+							<br>
+							<i class="icon-suitcase"></i> Contrate
+						</div>
 					</div>
 				</div>
-			
 			</div>
 		</div>
-		<div class='footer'>
-			Feito por um Otário - 2017 &copy
-		</div>
 
-		
+		<div class='footer'>
+			Desenvolvido por Otávio R. Perkles v.0.1 - 2017 &copy
+			<a href="https://www.djangoproject.com/">Django 1.11</a>
+		</div>
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

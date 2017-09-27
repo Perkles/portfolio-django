@@ -1,0 +1,67 @@
+{% extends "index.html"%}
+
+{% block artigo%}
+	<div class='row'>
+		<div id='artigo' class='col-lg-12 col-md-12 col-sm-12'>
+			{% for item in conteudo_artigo%}
+				{% if item.photo %}
+					<img src="{{item.photo}}" class="img-responsive" alt="..."> <!-- HARDCODED- TEM QUE CONFIGURAR UM ROOT MANEIRO -->
+				{% endif %}
+				
+					<a id='titulo' href="/artigos/{{item.id}}">{{item.titulo}}</a>
+					<h5 id ='autor'>{{item.autor}}</h5>
+					<h5 id ='tag'>{{item.tag}}</h5>
+
+					{% if item.corpo|length > 1000 %} <!-- Testa pra saber se o tamanho do texto é grande -->
+						<p id = 'corpo_artigo'>{{item.corpo|truncatewords:200|safe}} </p> <!-- se sim add botao 'continue lendo' / trucatewords filtra 200 palavras / safe diz que o texto ecapa as tags html -->
+						<h5 id ='data'>{{item.data}}</h5>
+						<button class="btn btn-default navbar-btn"> <a href="/artigos/{{item.id}}">Continue Lendo</a></button>
+					{% else %}
+						<p>{{item.corpo|safe}} </p>
+						<h5 id ='data'>{{item.data}}</h5>
+					{% endif%}		
+			{% endfor %}
+
+			<nav aria-label="pagin">
+				<ul class="pager">
+					{% if conteudo_artigo.has_previous %}
+						<li><a href="?page={{ conteudo_artigo.previous_page_number }}">previous</a></li>
+					{% endif %}
+					 
+					<!-- <span class="current"> -->
+						Página {{ conteudo_artigo.number }} de {{ conteudo_artigo.paginator.num_pages }}.
+					<!--</span>-->
+
+					{% if conteudo_artigo.has_next %}
+						<li><a href="?page={{ conteudo_artigo.next_page_number }}">next</a></li>
+					{% endif %}
+				</ul>
+			</nav>
+		</div>	
+	</div> <!--FIM DA LINHA UM --> 
+{% endblock %}
+
+{% block portfolio %}
+	<div id='trabalho_destacado' class="row">
+		{% for item in trabalhos%} <!-- cria um loop pelos trabalhos continos no portfolio-->
+			{% if item.id != 4 %} <!--seleciona os primeiros 3-->
+					<div class=" col-lg-4 col-md-4 col-sm-4">
+					<div class="thumbnail">
+							{% if item.imagem %}
+    						<img src="{{item.imagem}}" class="img-rounded" alt="...">
+     		 				
+     		 				{% endif %}
+  						<div class="caption">
+        					<h4>{{item.nome}}</h4>
+        					<p>{{item.descricao}}</p>
+        					<!-- <p>{{item.fim}}</p> -->
+        					<br>
+        					<a href="/portfolio/" class="btn btn-primary" role="button">Detalhes</a>
+        					
+  						</div>
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}	  				
+	</div><!-- FIM DA LINHA DOIS-->
+{% endblock %}
