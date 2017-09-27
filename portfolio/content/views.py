@@ -24,7 +24,7 @@ def home (request):
 		conteudo = paginator.page(paginator.num_pages)
 
 	context = {'conteudo_artigo': conteudo, 'menu':menu,'trabalhos':trabalhos_feitos}
-	return render(request, 'index.html', context)
+	return render(request, 'base.html', context)
 
 
 def artigos(request,id_pagina_artigo): #Pega o ID capturado pelo Regex da url e usa como elemento para achar determinado Artigo
@@ -32,7 +32,6 @@ def artigos(request,id_pagina_artigo): #Pega o ID capturado pelo Regex da url e 
 		materia = Article.objects.get(id=id_pagina_artigo)
 	except ObjectDoesNotExist:
 		raise Http404
-	print ('seu numero é esse: ', (id_pagina_artigo))
 	return render(request, 'artigo.html', {'teste': materia})
 
 def portfolio(request): #renderiza a pagina de portifolio em sí 
