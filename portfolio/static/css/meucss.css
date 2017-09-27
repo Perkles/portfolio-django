@@ -1,0 +1,130 @@
+	/* ELEMENTOS GERAIS FORA DA DIV PRINCIPAL */
+	body{
+		background-color: #5b6670;
+		font-family: 'Antic Slab', serif;
+		font-size: 20px;
+	}
+	.base{
+		padding-bottom: 50px;
+	}
+	.jumbotron{
+		background-color: #dff2f7;
+	}
+	.jumbotron_container{
+		text-align: center;	
+		font-family: 'Amatic SC', cursive;
+	}
+	/* ELEMENTOS GERAIS FORA DA DIV PRINCIPAL */
+
+	/* FOOTER  */
+	.pre_footer{
+		color:#faffff;
+		background-color: #34383c;
+		text-align: left;
+		font-family: 'Amatic SC', cursive;
+
+	}
+	.pre_footer ul{
+		list-style-type : none;
+	}
+	.pre_footer ul li{
+		color:#faffff;
+	}
+	.pre_footer ul li:hover{
+		color:#ce6a5f;
+	}
+	.footer{
+		padding:20px;
+		font-size: 15px;
+		font-family: 'Antic Slab', serif;
+		color:#faffff;
+		background-color: #1e2022;
+		text-align: center;
+	}
+	.footer a{
+		text-decoration: none;
+	}
+	.contato{
+		text-align: center;
+	}
+	/* FIM FOOTER  */
+
+	/* MENU DE NAVEGACAO  https://stackoverflow.com/questions/19733447/bootstrap-navbar-with-left-center-and-right-aligned-items */
+	.navbar{
+		margin-bottom: 0;
+		background-color: #34383c;
+		border-color: #34383c;
+	}
+	.navbar text{
+		color:green;
+	}
+	.navbar-brand{
+		position: absolute;
+		width: 100%;
+		left: 0;
+		text-align: center;
+		margin:0 auto;
+	}
+	.navbar-toggle {
+		z-index:3;
+	}
+	.nav.navbar-nav.navbar-left li a{
+		font-size: 25px;
+		font-family: 'Amatic SC', cursive;
+		color:#faffff;
+	}
+	.nav.navbar-nav.navbar-left li a:hover{
+		font-family: 'Amatic SC', cursive;
+		color:#ce6a5f;
+	}
+	.nav.navbar-nav.navbar-right li a{
+		color:#faffff;
+	}
+	.nav.navbar-nav.navbar-right li a:hover{
+		color:#ce6a5f;
+	}
+	/*FIM MENU DE NAVEGACAO*/
+
+	/*FORMATATACAO DO ARTIGO*/
+	#artigo{
+		background-color: #dff2f7;
+		padding: 15px;
+	}
+	#artigo img{
+		max-width: 100%;
+		height: auto;
+		margin:auto;
+	}
+	#titulo{
+		font-family: 'Amatic SC', cursive;
+		margin:10px;
+		font-size: 50px;
+		text-decoration: none;
+	}
+	#data{
+		text-align: right;
+	}
+	#tag{
+		text-align: left;
+	}
+	/* FIM DA FORMATAÇÃO DO ARTIGO*/
+
+	/* CONFIGURAÇÃO DO PORTFOLIO*/		
+	#trabalho_destacado{
+		background-color: #dff2f7;
+		padding: 15px;
+	}
+	.thumbnail{
+		background-color: #5b6670;
+	}
+	.thumbnail h4{
+		color:#faffff;
+		font-size: 45px;
+		text-align: center;
+		font-family: 'Amatic SC', cursive;
+	}
+	.thumbnail p{
+		text-align:justify;
+		color:#faffff;
+	}
+	/* FIM CONFIGURAÇÃO PORTFOLIO*/
