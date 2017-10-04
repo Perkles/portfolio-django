@@ -27,10 +27,13 @@
 	.pre_footer ul{
 		list-style-type : none;
 	}
-	.pre_footer ul li{
+	.pre_footer a{
+		text-decoration: none;
+	}
+	.pre_footer ul li a{
 		color:#faffff;
 	}
-	.pre_footer ul li:hover{
+	.pre_footer ul li a:hover{
 		color:#ce6a5f;
 	}
 	.footer{

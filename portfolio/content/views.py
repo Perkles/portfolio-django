@@ -1,5 +1,5 @@
-from .models import Article, Work
 from django.http import Http404
+from .models import Article, Work
 from django.shortcuts import render
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -28,11 +28,14 @@ def home (request):
 
 
 def artigos(request,id_pagina_artigo): #Pega o ID capturado pelo Regex da url e usa como elemento para achar determinado Artigo
+	menu = Article.objects.all() #HARDCODED - BUSCAR UMA ALTERNATIVA , TA AQUI SO PARA DEMARCAR
 	try:
 		materia = Article.objects.get(id=id_pagina_artigo)
 	except ObjectDoesNotExist:
-		raise Http404
-	return render(request, 'artigo.html', {'teste': materia})
+		#raise Http404
+		return render(request, '404.html', {'menu':menu})
+
+	return render(request, 'artigo.html', {'teste': materia, 'menu':menu})
 
 def portfolio(request): #renderiza a pagina de portifolio em sí 
 	trabalhos_feitos = Work.objects.all()

@@ -30,7 +30,7 @@
 
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-left">
-					<li><a href="#"> Inicio</a></li>
+					<li><a href="http://127.0.0.1:8000/"> Inicio</a></li>
 					<li><a href="#aout">Portfolio</a></li>
 					<li><a href="#aout">Sobre Mim</a></li>
 				</ul>
@@ -55,16 +55,15 @@
 		</div>
 
 		<div class='base container'>
-			{% block artigo%}
- 			
-			{% endblock %}
+			{% block artigo%}{% endblock %}
 
-			{% block portfolio %}
-		
-			{% endblock %}
+			{% block portfolio %}{% endblock %}
 
-			{% block artigo_full %}
-			{% endblock %}
+			{% block artigo_full %}{% endblock %}
+
+			{% block 404 %}{% endblock %}
+
+			
 
 		</div><!-- FIM DO CONTAINER PRINCIPAL-->
 			
@@ -76,7 +75,7 @@
 						<h2>Ultimos Posts</h2>
 						{% for item in menu%}
 							<ul>
-								<li>{{item.titulo}} - {{item.data}}</li>
+								<li><a href="/artigos/{{item.id}}">{{item.titulo}} - {{item.data}}</a></li>
 							</ul>
 						{% endfor %}
 					</div>
@@ -98,10 +97,10 @@
 			Desenvolvido por Otávio R. Perkles v.0.1 - 2017 &copy
 			<a href="https://www.djangoproject.com/">Django 1.11</a>
 		</div>
-
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		
+		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="{%  static 'content/js/bootstrap.min.js' %}"></script>
+
 	</body>	
 </html>

@@ -25,7 +25,7 @@
 			<nav aria-label="pagin">
 				<ul class="pager">
 					{% if conteudo_artigo.has_previous %}
-						<li><a href="?page={{ conteudo_artigo.previous_page_number }}">previous</a></li>
+						<li><a href="?page={{ conteudo_artigo.previous_page_number }}">Anterior</a></li>
 					{% endif %}
 					 
 					<!-- <span class="current"> -->
@@ -33,7 +33,7 @@
 					<!--</span>-->
 
 					{% if conteudo_artigo.has_next %}
-						<li><a href="?page={{ conteudo_artigo.next_page_number }}">next</a></li>
+						<li><a href="?page={{ conteudo_artigo.next_page_number }}">Próxima</a></li>
 					{% endif %}
 				</ul>
 			</nav>
