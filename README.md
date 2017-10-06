@@ -3,10 +3,10 @@
 A personal blog developed using Django 1.11.
 If somehow you got here, please consider that this project is developed for a iniciant student in Python and the code should not be a exemple.
 
-Change:
+To do:
 
-- optimize last viewd menu 
-- rename some variables to make more syntactic sense
-- clean up and organize the views
-- rename the apps and variables relate to them to make more syntactic sense.
+- Optimize last viewd menu 
+- Rename some variables to make more syntactic sense
+- Clean up and organize the views
+- Rename the apps and variables relate to them to make more syntactic sense.
 - FIX -Image exhibition in article page
