@@ -31,8 +31,8 @@
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-left">
 					<li><a href="http://127.0.0.1:8000/"> Inicio</a></li>
-					<li><a href="#aout">Portfolio</a></li>
-					<li><a href="#aout">Sobre Mim</a></li>
+					<li><a href="http://127.0.0.1:8000/portfolio">Portfolio</a></li>
+					<li><a href="http://127.0.0.1:8000/sobremim">Sobre Mim</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -45,14 +45,9 @@
 		</nav><!-- BARRA DE NAVEGAÇÃO --> 
 
 
-	
-		<div class="jumbotron">
-			<div class='jumbotron_container container'>
-	  			<h1>Olá! Eu sou o Otávio</h1>
-	  			<h2>Programador free lance a proucura de projetos emocionates</h2>
-	  			<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-  			</div>	
-		</div>
+		{% block jumbo %}
+
+		{% endblock %}
 
 		<div class='base container'>
 			{% block artigo%}{% endblock %}
@@ -62,6 +57,8 @@
 			{% block artigo_full %}{% endblock %}
 
 			{% block 404 %}{% endblock %}
+
+			{% block sobremim %}{% endblock %}
 
 			
 

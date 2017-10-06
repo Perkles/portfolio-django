@@ -1,8 +1,18 @@
 {% extends "index.html"%}
 {% load static %}
+
+
+{% block jumbo %}
+	<div class="jumbotron">
+		<div class='jumbotron_container container'>
+  			<h1>Olá! Eu sou o Otávio</h1>
+  			<h2>Programador free lancer a proucura de projetos emocionates</h2>
+  			<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+			</div>	
+	</div>
+{% endblock %}
+
 {% block artigo_full %}
-
-
 <div class='row'>
 	<div id='artigo' class='col-lg-12 col-md-12 col-sm-12'>
 		{% if teste.photo %}

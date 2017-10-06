@@ -1,5 +1,15 @@
 {% extends "index.html"%}
 
+{% block jumbo %}
+	<div class="jumbotron">
+		<div class='jumbotron_container container'>
+  			<h1>Olá! Eu sou o Otávio</h1>
+  			<h2>Programador free lancer a proucura de projetos emocionates</h2>
+  			<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+			</div>	
+	</div>
+{% endblock %}
+
 {% block artigo%}
 	<div class='row'>
 		<div id='artigo' class='col-lg-12 col-md-12 col-sm-12'>
@@ -44,7 +54,7 @@
 {% block portfolio %}
 	<div id='trabalho_destacado' class="row">
 		{% for item in trabalhos%} <!-- cria um loop pelos trabalhos continos no portfolio-->
-			{% if item.id != 4 %} <!--seleciona os primeiros 3-->
+			
 					<div class=" col-lg-4 col-md-4 col-sm-4">
 					<div class="thumbnail">
 							{% if item.imagem %}
@@ -56,12 +66,12 @@
         					<p>{{item.descricao}}</p>
         					<!-- <p>{{item.fim}}</p> -->
         					<br>
-        					<a href="/portfolio/" class="btn btn-primary" role="button">Detalhes</a>
+        					<a href="portfolio" class="btn btn-primary" role="button">Detalhes</a>
         					
   						</div>
 					</div>
 				</div>
-			{% endif %}
+			
 		{% endfor %}	  				
 	</div><!-- FIM DA LINHA DOIS-->
 {% endblock %}

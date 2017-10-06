@@ -1,16 +1,28 @@
 {% extends "index.html"%}
 {% load static %}
-{% block portfolio %}
 
+{% block jumbo %}
+  <div class="jumbotron">
+    <div class='jumbotron_container container'>
+        <h1>Olá! Eu sou o Otávio</h1>
+        <h2>Programador free lancer a proucura de projetos emocionates</h2>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+      </div>  
+  </div>
+{% endblock %}
+
+{% block portfolio %}
 	<div id='trabalho_destacado' class="row">
-		{% for item in trabalhos%} <!-- cria um loop pelos trabalhos continos no portfolio-->
+		{% for item in escopo%} <!-- cria um loop pelos trabalhos continos no portfolio-->
 			<div class="col-sm-6 col-md-4">
 				<div class="thumbnail">
- 		 			<!--<img src="{% static 'content/dagon.png' %}" alt="...">-->
   					<div class="caption">
     					<h3>{{item.nome}}</h3>
+    					<p>{{item.foto}}</p>
     					<p>{{item.descricao}}</p>
-    					<p>{{item.fim}}</p>
+    					<p>{{item.data}}</p>
+    					<p>{{item.tecnologia}}</p>
+    					<p>{{item.url}}</p>
     					<p><a href="#" class="btn btn-primary" role="button">Ver Detalhes</a> 
   					</div>
 				</div>
