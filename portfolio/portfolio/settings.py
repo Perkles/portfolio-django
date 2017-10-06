@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'content',
-    'tinymce'
+    'tinymce',
+    'portfolio_page',
+    'about_me',
+
 ]
 #TINYMCE CONFIGURATION
 TINYMCE_SPELLCHECKER = False
