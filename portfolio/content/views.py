@@ -37,7 +37,7 @@ def artigos(request,id_pagina_artigo): #Pega o ID capturado pelo Regex da url e 
 
 	return render(request, 'artigo.html', {'teste': materia, 'menu':menu})
 
-def portfolio(request): #renderiza a pagina de portifolio em sí 
+def trabalho_destaque(request): #renderiza a pagina de portifolio em sí 
 	trabalhos_feitos = Work.objects.all()
 	context = {'trabalhos': trabalhos_feitos}
 	return render(request, 'portfolio.html', context)
