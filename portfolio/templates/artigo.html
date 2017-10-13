@@ -16,7 +16,7 @@
 <div class='row'>
 	<div id='artigo' class='col-lg-12 col-md-12 col-sm-12'>
 		{% if teste.photo %}
-			<img src="{% static '{{teste.photo}}' %}" class="img-responsive" alt="..."> <!-- HARDCODED- TEM QUE CONFIGURAR UM ROOT MANEIRO -->
+			<img src="/{{teste.photo}}" class="img-responsive" alt="..."> <!-- HARDCODED- TEM QUE CONFIGURAR UM ROOT MANEIRO -->
 		{% endif %}
 		<a id='titulo' href="/artigos/{{teste.id}}">{{teste.titulo}}</a>
 		<h5 id ='autor'>{{teste.autor}}</h5>
