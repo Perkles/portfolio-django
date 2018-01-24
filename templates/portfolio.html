@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio</title>
+</head>
+<body>
+<h5>portfolio</h5>
+	{% for item in project %}
+		<h1> {{item.name}} </h1>
+		<h2> {{item.website}} </h2>
+		<p> {{item.description|safe}} </p>
+		<h5> {{item.tecnology}}</h5>
+		<h5> {{item.data}}</h5>
+	{% endfor %}
+</body>
+</html>
