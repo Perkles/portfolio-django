@@ -7,8 +7,8 @@ If somehow you got here, please consider that this project is developed for a in
 _Note: Rebuilding the entire project to refine the code._
 
 #### Adicional libraries used:
-- [Django TinyMCE == 2.7.0] (https://django-tinymce.readthedocs.io/en/latest/)
-- [Pillow == 5.0.0] (https://pillow.readthedocs.io/en/latest/)
+- [Django TinyMCE == 2.7.0](https://django-tinymce.readthedocs.io/en/latest/)
+- [Pillow == 5.0.0](https://pillow.readthedocs.io/en/latest/)
 
 #### Workin on 
 - [ ] Fix the paginator who is not working properly
