@@ -1,5 +1,8 @@
 {% load static %}
 
+{% if item.image %}
+	<img src={{item.image.url}}> <!-- Got the url path to the image -->
+{% endif %}
 <h1> {{article_content.title}} </h1>
 <h2> {{article_content.author}} </h2>
 <p> {{article_content.body|safe}} </p>

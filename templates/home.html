@@ -19,6 +19,9 @@
 <body>
 	<div id='container'>
 	{% for item in post %}
+		{% if item.image %}
+			<img src={{item.image.url}}> <!-- Got the url path to the image -->
+		{% endif %}
 		<h1> {{item.title}} </h1>
 		<h2> {{item.author}} </h2>
 		<p> {{item.body|safe}} </p>
