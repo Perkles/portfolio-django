@@ -2,6 +2,7 @@ from .models import Post
 from django.shortcuts import render
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from taggit.models import Tag
 
 
 
@@ -12,8 +13,9 @@ def Blog (request):
 	page = request.GET.get('page')
 	contacts = paginator.get_page(page)
 
-	
-	context = {'post':post, 'contacts':contacts}
+	tags = Tag.objects.all()
+
+	context = {'post':post, 'contacts':contacts, 'tags':tags}
 	return render(request, 'home.html', context)
 
 def Articles(request,id_pag): #Pega o ID capturado pelo Regex da url e usa como elemento para achar determinado Artigo

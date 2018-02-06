@@ -29,12 +29,10 @@
 		<h5> {{item.tag}}</h5>
 	{% endfor %}
 
-	{% for contact in contacts %}
-    {# Each "contact" is a Contact model object. #}
-    {{ contact.title|upper }}<br />
-    ...
+	{% for item in tags %}
+		<h1>{{item.name}}</h1>
 	{% endfor %}
-
+	
 	<div class="pagination">
     	<span class="step-links">
 	        {% if contacts.has_previous %}
