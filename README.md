@@ -1,5 +1,4 @@
-# Portfolio Django v0.2
-
+# Portfolio Django WIP
 #### General Notes
 
 A personal blog developed using Django 2.0.1
