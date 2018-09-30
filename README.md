@@ -1,17 +1,16 @@
-# Portfolio Django WIP
-#### General Notes
+# Portfolio Django v0.1
 
-A personal blog developed using Django 2.0.1
+A personal blog developed using Django 1.11.
 If somehow you got here, please consider that this project is developed for a iniciant student in Python and the code should not be a exemple.
-_Note: Rebuilding the entire project to refine the code._
 
-#### Adicional libraries used:
-- [Django TinyMCE == 2.7.0](https://django-tinymce.readthedocs.io/en/latest/)
-- [Pillow == 5.0.0](https://pillow.readthedocs.io/en/latest/)
-- [Django Taggint == 0.22.2](https://django-taggit.readthedocs.io/en/latest/)
+To do:
 
-#### Workin on 
-- [ ] Fix the paginator who is not working properly
-- [ ] Add a tag sistem to 'Blog' model
-- [ ] Find a way to resize the images to get padronized
-- [ ] HTML - Stuffs
+- Optimize last viewd menu 
+- Rename some variables to make more syntactic sense
+- Clean up and organize the views
+- Rename the apps and variables relate to them to make more syntactic sense.
+- FIX -Image exhibition in article page
+
+DJANGO 1.10
+PILLOW 3.3
+VIRTUALENV 15.1

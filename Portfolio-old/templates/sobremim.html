@@ -1,0 +1,12 @@
+{% extends "index.html"%}
+
+{% block sobremim %}
+
+<div class='row'>
+	<div id='bio' class='col-lg-12 col-md-12 col-sm-12'>
+		{% for item in bio%}
+		<img src="{{item.foto}}" class="img-circle" alt="..."> <!-- HARDCODED- TEM QUE CONFIGURAR UM ROOT MANEIRO -->
+		<h2>{{item.nome}}</h2>
+		<p>{{item.descricao|safe}} </p>
+		{% endfor %}
+{% endblock %}
